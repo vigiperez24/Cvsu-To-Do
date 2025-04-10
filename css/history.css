@@ -1,0 +1,209 @@
+/* General Styles */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body{
+    font-family: "Inter", sans-serif;
+    background-color: #e4e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container */
+.main-container{
+    background-color: #ffffff;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    
+}
+
+/* Header Styles */
+.main-container .header{
+    background-color: #006540;
+    position: relative;
+    padding: 30px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Logo Styles */
+.header img{
+    height: 50px;
+    position: absolute;
+    border-radius: 50px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Logo Background Circle */
+.header .circle {
+    position: absolute;
+    background-color: #006540;
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Main Content Container */
+.main-container main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    height: 600px;
+    overflow-y: auto;
+    margin-bottom: 70px;
+    padding: 40px 20px 0px 20px;
+
+
+}
+/* Title Content */
+main .title-content{
+    font-weight: 700;
+    color: #333333;
+}
+/* My task */
+main .myTask{
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D6F2E1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    
+}
+
+/* Complete effect task */
+main .complete-task{
+    opacity: 50%;
+
+}
+
+.complete-task .myTask-done p{
+    text-decoration: line-through;
+}
+
+/* Styling myTask */
+.myTask p{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.myTask span{
+    color:#006540;
+    font-size: 12px;
+    margin-left: 5px;
+    
+}
+
+.myTask .description{
+    font-weight: 200;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.myTask .edit-delete{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.myTask .edit-delete button{
+    background-color: transparent;
+    border: none;
+
+}
+.myTask .edit-delete button img{
+    height: 25px;
+
+}
+.myTask .edit-delete button img:hover{
+    opacity: 80%;
+
+}
+
+
+
+
+
+
+/* Navbar */
+nav{
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+ul li {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-weight: 600;
+    gap: 5px;
+    font-size: 12px;
+    color: #006540;
+    text-decoration: none;
+}
+
+
+/* Mobile Screen responsive */
+@media (max-width: 768px){
+    .main-container{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .two-no-task .helper-text{
+
+        color: #333333;
+    }
+    /* Main contents */
+    .main-container main{
+        padding-bottom: 150px;
+        min-height: 100vh;
+    }
+
+
+    
+
+
+    
+}
+
+
