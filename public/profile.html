@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default</title>
+    <link rel="stylesheet" href="/public/css/profile.css" />
+    <script type="module" src="/src/profile.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="circle"></div>
+        <div class="logo">
+          <img src="/images/defaultIcon/Cavite_State_University_(CvSU).png" alt="CvSU Logo" />
+        </div>
+      </header>
+
+      <!-- Main Content: Profile -->
+      <main>
+        <div class="profile-name">
+          <img src="/images/20250323_153950(0).remini-enhanced.jpg" alt="Profile Image" id="profileImage" />
+          <div class="email-fullname">
+            <p id="fullName">Loading...</p>
+            <p class= "email">Loading...</p>
+
+          </div>
+        </div>
+        <hr />
+
+        <!-- Profile Information -->
+        <div class="details information">
+          <div class="icon">
+            <img src="/images/profile/person.svg" alt="Profile Icon" />
+            <h1>Profile</h1>
+          </div>
+          <div class="content-info">
+
+            <p id="displayName"></p>
+            <p id="contactNo">Contact No: +639108765575</p>
+            <p class ="email">Loading...</p>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Security Settings -->
+        <div class="details security">
+          <div class="icon">
+            <img src="/images/profile/lock.svg" alt="Security Icon" />
+            <h1>Security</h1>
+          </div>
+          <div class="content-info">
+            <p id="changePassword">Change Password</p>
+            <p id="changeName">Change Name</p>
+            <p id="deleteAccount">Delete Account</p>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Task Info -->
+        <div class="details Task">
+          <div class="icon">
+            <img src="/images/profile/task.svg" alt="Task Icon" />
+            <h1>Task Specific Info</h1>
+          </div>
+          <div class="content-info">
+            <p id="tasksCompleted">Number of Tasks Complete: <strong>102</strong></p>
+            <p id="tasksPending">Tasks Pending: <strong>102</strong></p>
+            <p id="joinedSince">Joined Since: <strong>Loading...</strong></p>
+            <p id="lastActive">Last Active: <strong>April 6, 2025</strong></p>
+          </div>
+        </div>
+
+        <!-- Logout Section -->
+        <div class="logout">
+          <img src="/images/profile/logout.svg" alt="Logout Icon" />
+          <h1 id="logout">Logout</h1>
+        </div>
+      </main>
+
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="/public/default.html">
+              <img src="/images/defaultIcon/task.svg" alt="Task Icon" />
+              Task
+            </a>
+          </li>
+          <li>
+            <a href="/public/history.html">
+              <img src="/images/defaultIcon/history.svg" alt="History Icon" />
+              History
+            </a>
+          </li>
+          <li>
+            <a href="/public/profile.html">
+              <img src="/images/defaultIcon/account.svg" alt="Profile Icon" />
+              Profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
