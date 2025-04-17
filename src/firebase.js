@@ -5,12 +5,12 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import {
   getFirestore,
   setDoc,
-  doc
+  doc,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 // Your Firebase config
@@ -21,7 +21,7 @@ const firebaseConfig = {
   storageBucket: "cvsu-to-do-fda9a.appspot.com",
   messagingSenderId: "831938988582",
   appId: "1:831938988582:web:8e957ce70aa358e1f7b4e7",
-  measurementId: "G-W30F99SD5S"
+  measurementId: "G-W30F99SD5S",
 };
 
 // Initialize Firebase
@@ -39,5 +39,5 @@ export {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   setDoc,
-  doc
+  doc,
 };

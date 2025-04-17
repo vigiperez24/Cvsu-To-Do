@@ -1,19 +1,18 @@
-
-// Sign up profile
-
+// Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword
+  createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import {
   getFirestore,
   setDoc,
-  doc
+  doc,
+  updateDoc 
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-// ✅ Firebase config
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBA6nhXjrNVLXc2ZrRQtWAIb8fH-OKQYic",
   authDomain: "cvsu-to-do-fda9a.firebaseapp.com",
@@ -21,55 +20,65 @@ const firebaseConfig = {
   storageBucket: "cvsu-to-do-fda9a.appspot.com",
   messagingSenderId: "831938988582",
   appId: "1:831938988582:web:8e957ce70aa358e1f7b4e7",
-  measurementId: "G-W30F99SD5S"
+  measurementId: "G-W30F99SD5S",
 };
 
-// ✅ Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ✅ Signup Form Handling using click event
-window.addEventListener('DOMContentLoaded', () => {
-  const errorMessage = document.getElementById('error-message');
-  const signupBtn = document.getElementById('signupBtn'); // assuming button id="signupBtn"
+// Signup Form Handling
+window.addEventListener("DOMContentLoaded", () => {
+  const errorMessage = document.getElementById("error-message");
+  const signupBtn = document.getElementById("signupBtn");
+  const agreeCheckbox = document.getElementById("agreeCheckbox");
 
-  signupBtn.addEventListener('click', async (e) => {
-    e.preventDefault(); // prevent form from refreshing page on button click
+  // Disable/Enable button based on checkbox
+  agreeCheckbox.addEventListener("change", () => {
+    signupBtn.disabled = !agreeCheckbox.checked;
+  });
+
+  // Signup button click
+  signupBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
 
     const firstName = document.getElementById("firstname").value.trim();
     const lastName = document.getElementById("lastname").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
-
+    // Validate inputs
     if (!firstName || !lastName || !email || !password) {
-      errorMessage.textContent ="Please fill out the input field.";
+      errorMessage.textContent = "Please fill out the input field.";
       return;
     }
+
     const RegExfullName = /^[A-Za-z]+$/;
     if (!RegExfullName.test(firstName) || !RegExfullName.test(lastName)) {
-      errorMessage.textContent ="Only letters are allowed. No symbols or numbers.";
+      errorMessage.textContent =
+        "Only letters are allowed. No symbols or numbers.";
       return;
     }
-    
+
     try {
+      // Create user with Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, 'users', user.uid), {
+      // Save user data to Firestore
+      await setDoc(doc(db, "users", user.uid), {
         firstName,
         lastName,
         email,
-        createdAt: new Date()
+        createdAt: new Date(),
       });
 
-      alert('Signup Successful!');
+      alert("Signup Successful!");
       window.location.href = "profile.html";
     } catch (error) {
-      alert('Error: ' + error.message);
-
+      alert("Error: " + error.message);
     }
   });
 });

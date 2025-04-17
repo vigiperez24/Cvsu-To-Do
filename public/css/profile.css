@@ -79,6 +79,11 @@ main .profile-name {
 main .profile-name .email-fullname{
   display: flex;
   flex-direction: column;
+  gap: 5px
+  
+}
+main .profile-name .email-fullname span{
+  font-size: 12px;
   
 }
 
@@ -91,8 +96,8 @@ main .profile-name img {
 }
 
  .profile-name .email-fullname p {
-  font-weight: 700;
-  margin-bottom: 10px;
+
+
 }
 
 /* main Cotent */
@@ -120,20 +125,168 @@ main .details .content-info {
   gap: 5px;
   color: #333333;
 }
+
+main .details .record{
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
+.edit-group #deleteAccount{
+  color: red;
+  font-size: 16px;
+}
+/* Hover */
+.edit-group #deleteAccount:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+main .details .content-info .edit-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-group button{
+  background-color: transparent;
+  border: none;
+}
+
+.edit-group button img {
+  height: 20px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.edit-group button img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #006540;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-button {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* record task specifi info */
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  margin: 10% auto;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #006540;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
 /* Logout in profile */
 main .logout {
   display: flex;
   gap: 6px;
   color: #333333;
-  align-items: center;
+
+
+  align-items:center;
   justify-content: flex-start;
   margin-top: 20px;
   cursor: pointer;
 }
 
-main .logout h1 {
-  font-size: 20px;
+main .logout button {
+  font-size: 18px;
+  background-color: #006540;
+  color: White;
+  font-weight: 500;
+  padding: 4px 6px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
 }
+
 
 /* /* Navbar */
 nav {

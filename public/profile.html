@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Default</title>
     <link rel="stylesheet" href="/public/css/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <script type="module" src="/src/profile.js"></script>
+    <script type="module" src="/src/editProfile.js"></script>
+    <script type="module" src="/src/resetPassword.js"></script>
+
   </head>
   <body>
     <div class="main-container">
@@ -13,18 +20,25 @@
       <header class="header">
         <div class="circle"></div>
         <div class="logo">
-          <img src="/images/defaultIcon/Cavite_State_University_(CvSU).png" alt="CvSU Logo" />
+          <img
+            src="/images/defaultIcon/Cavite_State_University_(CvSU).png"
+            alt="CvSU Logo"
+          />
         </div>
       </header>
 
       <!-- Main Content: Profile -->
       <main>
         <div class="profile-name">
-          <img src="/images/20250323_153950(0).remini-enhanced.jpg" alt="Profile Image" id="profileImage" />
+          <img
+            src="/images/20250323_153950(0).remini-enhanced.jpg"
+            alt="Profile Image"
+            id="profileImage"
+          />
           <div class="email-fullname">
-            <p id="fullName">Loading...</p>
-            <p class= "email">Loading...</p>
-
+            <span id="userID">UserID: Loading... </span>
+            <p id="fullName">Name: Loading...</p>
+            <p class="email">Loading: Email...</p>
           </div>
         </div>
         <hr />
@@ -35,11 +49,69 @@
             <img src="/images/profile/person.svg" alt="Profile Icon" />
             <h1>Profile</h1>
           </div>
-          <div class="content-info">
 
-            <p id="displayName"></p>
-            <p id="contactNo">Contact No: +639108765575</p>
-            <p class ="email">Loading...</p>
+          <div class="content-info">
+            <!--  Edit Name Group -->
+            <div class="edit-group">
+              <p id="displayName">Name: Loading...</p>
+              <button id="editNameBtn">
+                <img
+                  src="/images/profile/edit_24dp_006540_FILL1_wght400_GRAD0_opsz24.svg"
+                  alt="Edit Name"
+                />
+              </button>
+            </div>
+
+            <!--  Edit Contact Group -->
+            <div class="edit-group">
+              <p id="contactNo">Contact No: Not set</p>
+              <button id="editContactBtn">
+                <img
+                  src="/images/profile/edit_24dp_006540_FILL1_wght400_GRAD0_opsz24.svg"
+                  alt="Edit Contact"
+                />
+              </button>
+            </div>
+
+            <!--  Modal: Edit Name -->
+            <div id="nameModal" class="modal">
+              <div class="modal-content">
+                <span class="close-button" id="closeNameModal">&times;</span>
+                <h2>Edit Name</h2>
+                <input
+                  type="text"
+                  id="firstNameInput"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="lastNameInput"
+                  placeholder="Last Name"
+                  required
+                />
+                <button id="saveNameBtn">Save</button>
+              </div>
+            </div>
+
+            <!--  Modal: Edit Contact -->
+            <div id="contactModal" class="modal">
+              <div class="modal-content">
+                <span class="close-button" id="closeContactModal">&times;</span>
+                <h2>Edit Contact Number</h2>
+                <input
+                  type="text"
+                  id="contactInput"
+                  placeholder="Enter contact number"
+                  required
+                />
+                <button id="saveContactBtn">Save</button>
+              </div>
+            </div>
+
+            <div class="edit-group">
+              <p class="email">Email: Loading...</p>
+            </div>
           </div>
         </div>
         <hr />
@@ -51,9 +123,35 @@
             <h1>Security</h1>
           </div>
           <div class="content-info">
-            <p id="changePassword">Change Password</p>
-            <p id="changeName">Change Name</p>
-            <p id="deleteAccount">Delete Account</p>
+            <div class="edit-group">
+              <p id="resetPassword">Reset Password</p>
+              <button id="resetPasswordBtn">
+                <img
+                  src="/images/profile/edit_24dp_006540_FILL1_wght400_GRAD0_opsz24.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            
+            <!-- Reset Password Modal -->
+            <div id="resetPasswordModal" class="modal">
+              <div class="modal-content">
+                <span class="close-button" id="closeResetModal">&times;</span>
+                <h2>Reset Password</h2>
+                <p>Please enter your email to reset your password.</p>
+                <input
+                  type="email"
+                  id="resetEmailInput"
+                  placeholder="Enter your email"
+                  required
+                />
+                <button id="sendResetBtn">Send Reset Link</button>
+              </div>
+            </div>
+
+            <div class="edit-group">
+              <button><p id="deleteAccount">Delete Account</p></button>
+            </div>
           </div>
         </div>
         <hr />
@@ -64,8 +162,10 @@
             <img src="/images/profile/task.svg" alt="Task Icon" />
             <h1>Task Specific Info</h1>
           </div>
-          <div class="content-info">
-            <p id="tasksCompleted">Number of Tasks Complete: <strong>102</strong></p>
+          <div class="content-info record">
+            <p id="tasksCompleted">
+              Number of Tasks Complete: <strong>102</strong>
+            </p>
             <p id="tasksPending">Tasks Pending: <strong>102</strong></p>
             <p id="joinedSince">Joined Since: <strong>Loading...</strong></p>
             <p id="lastActive">Last Active: <strong>April 6, 2025</strong></p>
@@ -74,8 +174,7 @@
 
         <!-- Logout Section -->
         <div class="logout">
-          <img src="/images/profile/logout.svg" alt="Logout Icon" />
-          <h1 id="logout">Logout</h1>
+          <button id="logout">Logout</button>
         </div>
       </main>
 
@@ -103,5 +202,16 @@
         </ul>
       </nav>
     </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button" id="closeModal">&times;</span>
+        <h2 id="modalTitle">Edit</h2>
+        <input type="text" id="modalInput" placeholder="Enter new value" />
+        <button id="saveChanges">Save</button>
+      </div>
+    </div>
   </body>
+  <script></script>
 </html>

@@ -1,5 +1,5 @@
 
-// Modal
+// 
 window.onload = function (){
     const openBtn = document.getElementById("openBtn");
     const cancelBtn = document.getElementById("cancelBtn");
