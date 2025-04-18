@@ -64,7 +64,7 @@
 
             <!--  Edit Contact Group -->
             <div class="edit-group">
-              <p id="contactNo">Contact No: Not set</p>
+              <p id="contactNo">Contact No: Loading</p>
               <button id="editContactBtn">
                 <img
                   src="/images/profile/edit_24dp_006540_FILL1_wght400_GRAD0_opsz24.svg"
@@ -138,6 +138,8 @@
               <div class="modal-content">
                 <span class="close-button" id="closeResetModal">&times;</span>
                 <h2>Reset Password</h2>
+                <div id="error-message" style="color: red; margin-bottom: 10px; text-align: center;"></div>
+
                 <p>Please enter your email to reset your password.</p>
                 <input
                   type="email"

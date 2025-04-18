@@ -15,6 +15,15 @@ body {
   height: 100vh;
 }
 
+
+
+
+@keyframes fade {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
 /* Main Container */
 .main-container {
   background-color: #ffffff;
@@ -70,54 +79,88 @@ body {
 main .title-content {
   font-weight: 700;
   color: #333333;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+
 }
-/* My task */
-main .myTask {
+
+.myTask{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #d6f2e1;
-  padding: 20px;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  gap: 20px;
+
   cursor: pointer;
+}
+.myTask .taskContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #d6f2e1;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Styling myTask */
-.myTask p {
+
+.taskContainer .title-date {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* takes available space */
+  overflow-wrap: break-word;
+}
+
+.taskContainer p {
   color: #333333;
   font-size: 18px;
   font-weight: 700;
+  max-width: 500px;
+  margin-bottom: 5px;
+  
 }
 
-.myTask span {
+.taskContainer span {
   color: #006540;
   font-size: 12px;
   margin-left: 5px;
 }
 
-.myTask .description {
+.taskContainer .description {
   font-weight: 200;
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 5px;
 }
 
-.myTask .edit-delete {
+.taskContainer .edit-delete {
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  width: 60px;
+  flex-shrink: 0;
 }
 
-.myTask .edit-delete button {
+.taskContainer .edit-delete button {
   background-color: transparent;
   border: none;
 }
-.myTask .edit-delete button img {
+.taskContainer .edit-delete button img {
   height: 25px;
 }
-.myTask .edit-delete button img:hover {
+.taskContainer .edit-delete button img:hover {
   opacity: 80%;
 }
+
+
+
+
 
 /* Button Position */
 .main-container .btn-addtask {
@@ -142,7 +185,8 @@ main .myTask {
 /* Two Groups Section */
 .main-container .no-task {
   /* When I dont have a task  */
-  display: none;
+  text-align: center;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;

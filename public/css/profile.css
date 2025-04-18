@@ -95,10 +95,7 @@ main .profile-name img {
   border-radius: 50px;
 }
 
- .profile-name .email-fullname p {
 
-
-}
 
 /* main Cotent */
 
@@ -253,7 +250,12 @@ main .details .content-info .edit-group {
   border-radius: 6px;
   cursor: pointer;
 }
+/* Hover */
 
+.logout button:hover {
+  background-color: #018856; /* darker green on hover */
+  cursor: pointer;
+}
 .close-button {
   position: absolute;
   top: 10px;

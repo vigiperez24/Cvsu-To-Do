@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CvSu Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/css/forgotPassword.css" />
+    <script type="module" src="/src/loginForgotPass.js"></script>
+  </head>
+
+  <body>
+    <!-- Main-container -->
+    <div class="main-container">
+      <!-- Logo And Title -->
+      <div class="logo-title">
+        <img
+          src="/images/defaultIcon/Cavite_State_University_(CvSU).png"
+          alt="Logo"
+        />
+        <h1>CvSu To Do</h1>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="login-form">
+        <!-- Login Title -->
+        <h1>Reset Password</h1>
+        <div id="error-message" style="color: red; margin-bottom: 10px; text-align: center;"></div>
+
+        <!-- Email Input -->
+        <div class="input-group">
+          <div class="img-label">
+            <img
+              src="/images/Icon/person_24dp_434343_FILL1_wght400_GRAD0_opsz24.svg"
+              alt=""
+            />
+            <label for="email">Email</label>
+          </div>
+          <input
+            type="text"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <button id="loginBtn" type="button">Submit</button>
+
+        <div class="signup">
+          <p>Back to the login page? <a href="login.html">Login here</a></p>
+        </div>
+      </form>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2025 <strong>Web Dev IMV</strong>. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
