@@ -6,7 +6,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #ffffff;
+  background-color: #e4e1e1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #e4e1e1;
+  background-color: #ffffff;
   width: 600px;
   padding: 1rem;
   border-radius: 8px;
