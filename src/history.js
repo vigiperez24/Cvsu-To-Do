@@ -58,7 +58,8 @@ const renderTask = (taskData, container, isComplete = false) => {
   
     // Set task status based on its completion and due date
     if (isComplete) {
-      statusText = ""; // No label if task is completed
+      statusText = "Completed!"; 
+      statusColor = "green"
     } else if (dueDate && dueDate < today) {
       statusText = "Expired";
       statusColor = "red";
@@ -137,4 +138,6 @@ onAuthStateChanged(auth, async (user) => {
     // If no user is logged in, redirect to the login page
     window.location.href = "login.html";
   }
+
+  
 });

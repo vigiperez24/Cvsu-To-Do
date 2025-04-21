@@ -1,15 +1,15 @@
-// Import Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"; // Initialize Firebase app
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"; // Import Firebase Analytics
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"; 
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"; 
 import {
   getAuth, // Firebase Authentication
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword, 
+  signOut
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import {
   getFirestore, // Firestore for database
-  setDoc, 
-  doc, 
+  getDoc, 
+  doc
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 // Firebase configuration (replace with your Firebase project's config)
@@ -59,9 +59,19 @@ window.addEventListener("DOMContentLoaded", () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user; // Get user data after successful login
 
-      // Redirect to default page after successful login
-      window.location.href = "default.html";
-      alert("Login Successful!"); 
+      // Check if the user exists in Firestore
+      const userRef = doc(db, "users", user.uid); // Assuming "users" is the collection where user data is stored
+      const userSnap = await getDoc(userRef);
+      
+      // If the user doesn't exist in Firestore, sign them out
+      if (!userSnap.exists()) {
+        await signOut(auth); // Sign out the user if they are not found in Firestore
+        errorMessage.textContent = "Your account no longer exists.";
+      } else {
+        // If the user exists in Firestore, proceed to the default page
+        window.location.href = "default.html";
+        alert("Login Successful!"); 
+      }
     } catch (error) {
       alert("Error: " + error.message); // Show error message if login fails
     }

@@ -8,9 +8,11 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
+  
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
+import { signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import {
   getAuth,
   onAuthStateChanged
@@ -254,9 +256,23 @@ function setupButtons() {
 // Fetch tasks only after user is logged in
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-    fetchTasks(); // Fetch tasks when user is logged in
+    // Check if the user still exists in Firestore
+    const userRef = doc(db, "users", user.uid); // Assume 'users' is the collection where user data is stored
+    const userSnap = await getDoc(userRef);
+    
+    if (!userSnap.exists()) {
+      // User no longer exists in Firestore, log them out
+      alert("Your account no longer exists.");
+      await signOut(auth);  // Sign out the user
+      window.location.href = "signup.html";  // Redirect to login page
+    } else {
+      // Fetch tasks if the user exists
+      fetchTasks(); 
+    }
   } else {
     alert("No user logged in");
     // Optional: redirect to login page if no user is logged in
+    window.location.href = "/login"; 
   }
 });
+

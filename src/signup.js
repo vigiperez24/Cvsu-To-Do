@@ -9,7 +9,7 @@ import {
   getFirestore,
   setDoc,
   doc,
-  updateDoc 
+  updateDoc,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 // Firebase configuration
@@ -64,7 +64,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Create user with Firebase Authentication
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       // Save user data to Firestore
