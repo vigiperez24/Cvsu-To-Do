@@ -4,82 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>History</title>
-    <link rel=" stylesheet" href="/public/css/history.css" />
+    <link rel="stylesheet" href="/public/css/history.css" />
+    <script type="module" src="/src/history.js"></script>
   </head>
   <body>
     <div class="main-container">
-      <!--Header Logo  -->
+      <!--Header Logo-->
       <header class="header">
         <div class="circle"></div>
         <div class="logo">
           <img
             src="/images/defaultIcon/Cavite_State_University_(CvSU).png"
-            alt=""
+            alt="CvSU Logo"
           />
         </div>
       </header>
 
       <!-- Content -->
-
       <main>
-        <!-- Title -->
+        <!-- Pending Tasks -->
         <div class="title-content">
           <p>Pending</p>
         </div>
-        <!-- pending -->
-        <div class="myTask">
-          <div class="title-date">
-            <p>Playing basketball</p>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur deleniti porro, vitae cupiditate nostrum eveniet eius
-              iusto vel libero neque tempore recusandae error nam consectetur
-              molestiae veniam adipisci excepturi quam!
-            </p>
-            <span>04-04-2025</span>
-          </div>
+        <div id="pending-container" class="task-section"></div>
 
-          <div class="edit-delete">
-            <button>
-              <img src="/images/defaultIcon/delete.svg" alt="delete for task" />
-            </button>
-            <button>
-              <img src="/images/defaultIcon/edit.svg" alt="delete for task" />
-            </button>
-          </div>
-        </div>
-
-        <!-- Title -->
+        <!-- Completed Tasks -->
         <div class="title-content">
-          <p>Compelete</p>
+          <p>Complete</p>
         </div>
-        <!-- Done! -->
-        <div class="complete-task">
-          <div class="myTask myTask-done">
-            <div class="title-date">
-              <p>Playing basketball</p>
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur deleniti porro, vitae cupiditate nostrum eveniet
-                eius iusto vel libero neque tempore recusandae error nam
-                consectetur molestiae veniam adipisci excepturi quam!
-              </p>
-              <span>04-04-2025</span>
-            </div>
+        <div id="complete-container" class="task-section"></div>
 
-            <div class="edit-delete">
-              <button>
-                <img
-                  src="/images/defaultIcon/delete.svg"
-                  alt="delete for task"
-                />
-              </button>
-              <button>
-                <img src="/images/defaultIcon/edit.svg" alt="delete for task" />
-              </button>
-            </div>
-          </div>
+        <!-- Expired Tasks -->
+        <div class="title-content">
+          <p>Expired</p>
         </div>
+        <div id="expired-container" class="task-section"></div>
       </main>
 
       <!-- Navbar -->

@@ -1,18 +1,18 @@
 // Import Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"; // Initialize Firebase app
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"; // Import Firebase Analytics
 import {
-  getAuth,
+  getAuth, // Firebase Authentication
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword, 
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import {
-  getFirestore,
-  setDoc,
-  doc,
+  getFirestore, // Firestore for database
+  setDoc, 
+  doc, 
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-// Firebase configuration
+// Firebase configuration (replace with your Firebase project's config)
 const firebaseConfig = {
   apiKey: "AIzaSyBA6nhXjrNVLXc2ZrRQtWAIb8fH-OKQYic",
   authDomain: "cvsu-to-do-fda9a.firebaseapp.com",
@@ -23,42 +23,47 @@ const firebaseConfig = {
   measurementId: "G-W30F99SD5S",
 };
 
-// Initialize Firebase
+// Initialize Firebase with the provided configuration
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app); // Firebase Authentication
-const db = getFirestore(app); // Firestore Database
+const auth = getAuth(app);
+const db = getFirestore(app); 
 
+// Wait for the DOM to be fully loaded before running the script
 window.addEventListener("DOMContentLoaded", () => {
-  const errorMessage = document.getElementById("error-message");
-  const loginBtn = document.getElementById("loginBtn");
-  const agreeCheckbox = document.getElementById("agreeCheckbox");
+  const errorMessage = document.getElementById("error-message"); 
+  const loginBtn = document.getElementById("loginBtn"); 
+  const agreeCheckbox = document.getElementById("agreeCheckbox"); 
 
-  // Disable/Enable button based on checkbox
+  // Enable or disable the login button based on the "agree" checkbox status
   agreeCheckbox.addEventListener("change", () => {
-    loginBtn.disabled = !agreeCheckbox.checked;
+    loginBtn.disabled = !agreeCheckbox.checked; // Disable the login button if checkbox is unchecked
   });
 
-
+  // Handle the login button click
   loginBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission
+
+    // Get email and password input values
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+
+    // Validate that email and password are entered
     if (!email || !password) {
-      errorMessage.innerHTML = `<p>Please fill out the input field.</p>`;
+      errorMessage.innerHTML = `<p>Please fill out the input field.</p>`; // Show error if any field is empty
       return;
     }
+
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
+      // Attempt to sign in the user with the provided email and password using Firebase Authentication
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user; // Get user data after successful login
+
+      // Redirect to default page after successful login
       window.location.href = "default.html";
-      alert("Login Successful!");
+      alert("Login Successful!"); 
     } catch (error) {
-      alert("Error: " + error.message);
+      alert("Error: " + error.message); // Show error message if login fails
     }
   });
 });
