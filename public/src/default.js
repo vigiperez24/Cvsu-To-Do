@@ -166,13 +166,13 @@ function createTaskItem(task, id) {
       </div>
       <div class="edit-delete">
         <button class="doneBtn" data-id="${id}">
-          <img src="/images/defaultIcon/done.svg" alt="Done" />
+          <img src="/public/images/defaultIcon/done.svg" alt="Done" />
         </button>
         <button class="editBtn" data-id="${id}">
-          <img src="/images/defaultIcon/edit.svg" alt="Edit" />
+          <img src="/public/images/defaultIcon/edit.svg" alt="Edit" />
         </button>
         <button class="deleteBtn" data-id="${id}">
-          <img src="/images/defaultIcon/delete.svg" alt="Delete" />
+          <img src="/public/images/defaultIcon/delete.svg" alt="Delete" />
         </button>
       </div>
     </div>

@@ -80,7 +80,7 @@ const renderTask = (taskData, container, isComplete = false) => {
         <span>Due Date: ${formattedDueDate} </span>
       </div>
       <button class="deleteBtn" data-id="${taskData.id}">
-        <img src="/images/defaultIcon/delete.svg" alt="Delete" />
+        <img src="/public/images/defaultIcon/delete.svg" alt="Delete" />
       </button>
     `;
   
