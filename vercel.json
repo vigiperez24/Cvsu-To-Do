@@ -1,10 +1,10 @@
 {
     "version": 2,
     "builds": [
-      { "src": "firebase.js", "use": "@vercel/node" }
+      { "src": "index.html", "use": "@vercel/static" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "firebase.js" }
+      { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
   
