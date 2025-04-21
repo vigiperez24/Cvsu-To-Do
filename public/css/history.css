@@ -190,8 +190,10 @@ li a {
     color: #333333;
   }
   /* Main contents */
-  .main-container main {
-    padding-bottom: 150px;
-    min-height: 100vh;
+
+
+  .main-container .modals {
+    position: fixed;
+    width: 300px;
   }
 }
