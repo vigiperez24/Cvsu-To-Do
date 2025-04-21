@@ -182,7 +182,7 @@ li a {
 /* Mobile Screen responsive */
 @media (max-width: 768px) {
   .main-container {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
   }
 
