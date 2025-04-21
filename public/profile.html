@@ -9,10 +9,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+    <link rel="icon" href="/images/defaultIcon/Cavite_State_University_(CvSU).png" type="image/x-icon">
     <script type="module" src="/src/profile.js"></script>
     <script type="module" src="/src/editProfile.js"></script>
     <script type="module" src="/src/resetPassword.js"></script>
-
   </head>
   <body>
     <div class="main-container">
@@ -132,13 +132,16 @@
                 />
               </button>
             </div>
-            
+
             <!-- Reset Password Modal -->
             <div id="resetPasswordModal" class="modal">
               <div class="modal-content">
                 <span class="close-button" id="closeResetModal">&times;</span>
                 <h2>Reset Password</h2>
-                <div id="error-message" style="color: red; margin-bottom: 10px; text-align: center;"></div>
+                <div
+                  id="error-message"
+                  style="color: red; margin-bottom: 10px; text-align: center"
+                ></div>
 
                 <p>Please enter your email to reset your password.</p>
                 <input
@@ -165,7 +168,7 @@
             <h1>Task Specific Info</h1>
           </div>
           <div class="content-info record">
-            <p id="tasksCompleted">Complete: <strong>Loading</strong> </p>
+            <p id="tasksCompleted">Complete: <strong>Loading</strong></p>
             <p id="tasksPending">Tasks Pending: <strong>Loading</strong></p>
             <p id="tasksExpired">Tasks Expired: <strong>Loading</strong></p>
             <p id="joinedSince">Joined Since: <strong>Loading...</strong></p>

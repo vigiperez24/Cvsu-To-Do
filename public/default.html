@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Default</title>
     <link rel="stylesheet" href="/public/css/default.css" />
-
+    <link
+      rel="icon"
+      href="/images/defaultIcon/Cavite_State_University_(CvSU).png"
+      type="image/x-icon"
+    />
     <script type="module" src="/src/default.js"></script>
   </head>
   <body>
-
     <div class="main-container">
       <!--Header Logo  -->
       <header class="header">
@@ -25,7 +28,7 @@
       <!-- Main content -->
       <main>
         <p class="title-content">Tasks</p>
-        <div class="no-task" id="no-task" >
+        <div class="no-task" id="no-task">
           <div class="img">
             <img
               style="height: 200px"
@@ -37,22 +40,15 @@
             <p>"Click the button below to create your first task!"</p>
           </div>
         </div>
-        
-        <div>
 
-        </div>
+        <div></div>
         <div class="myTask" id="taskList">
           <div class="title-date">
-       
             <p id="displayTitle"></p>
-            <p id="displayDiscription" class="description">
-             
-            </p>
+            <p id="displayDiscription" class="description"></p>
             <span id="displayDate"></span>
             <span class="task-status"></span>
           </div>
-
-
         </div>
       </main>
 
@@ -96,12 +92,18 @@
         <!-- my Modals -->
         <div class="modals">
           <p>Add new task</p>
-          <p style="text-align: center; font-size: 14px; color: red;" id="errorMessage"></p>
+          <p
+            style="text-align: center; font-size: 14px; color: red"
+            id="errorMessage"
+          ></p>
           <div class="input-task">
             <input type="hidden" id="taskId" />
 
             <input id="taskTitle" type="text" required placeholder="Title" />
-            <textarea id="taskDescription" placeholder="Type your description here..."></textarea>
+            <textarea
+              id="taskDescription"
+              placeholder="Type your description here..."
+            ></textarea>
           </div>
           <div class="icons-dates">
             <img

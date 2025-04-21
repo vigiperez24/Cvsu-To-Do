@@ -136,7 +136,7 @@ onAuthStateChanged(auth, async (user) => {
     });
   } else {
     // If no user is logged in, redirect to the login page
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 
   

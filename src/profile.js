@@ -121,7 +121,7 @@ if (logoutButton) {
     try {
       await signOut(auth); // Sign out the user
       alert("You have been logged out.");
-      window.location.href = "login.html"; // Redirect to login page
+      window.location.href = "index.html"; // Redirect to login page
     } catch (error) {
       console.error("Logout failed:", error);
       alert("Error during logout.");
