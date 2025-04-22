@@ -178,6 +178,10 @@ li a {
   opacity: 0.2;
 }
 
+#noAvailable{
+  color: #333333;
+  font-size: 12px;
+}
 /* Mobile Screen responsive */
 @media (max-width: 768px) {
   body {
