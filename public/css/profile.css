@@ -76,15 +76,13 @@ main .profile-name {
   color: #333333;
 }
 
-main .profile-name .email-fullname{
+main .profile-name .email-fullname {
   display: flex;
   flex-direction: column;
-  gap: 5px
-  
+  gap: 5px;
 }
-main .profile-name .email-fullname span{
+main .profile-name .email-fullname span {
   font-size: 12px;
-  
 }
 
 main .profile-name img {
@@ -94,8 +92,6 @@ main .profile-name img {
 
   border-radius: 50px;
 }
-
-
 
 /* main Cotent */
 
@@ -123,12 +119,12 @@ main .details .content-info {
   color: #333333;
 }
 
-main .details .record{
+main .details .record {
   display: flex;
   gap: 10px;
   font-size: 16px;
 }
-.edit-group #deleteAccount{
+.edit-group #deleteAccount {
   color: red;
   font-size: 16px;
 }
@@ -146,7 +142,7 @@ main .details .content-info .edit-group {
   gap: 10px;
 }
 
-.edit-group button{
+.edit-group button {
   background-color: transparent;
   border: none;
 }
@@ -167,8 +163,10 @@ main .details .content-info .edit-group {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -264,15 +262,13 @@ main .details .content-info .edit-group {
   cursor: pointer;
 }
 
-
 /* Logout in profile */
 main .logout {
   display: flex;
   gap: 6px;
   color: #333333;
 
-
-  align-items:center;
+  align-items: center;
   justify-content: flex-start;
   margin-top: 20px;
   cursor: pointer;
@@ -288,7 +284,6 @@ main .logout button {
   outline: none;
   border: none;
 }
-
 
 /* /* Navbar */
 nav {
@@ -332,15 +327,14 @@ li a {
     border-radius: 0;
   }
   .main-container {
-  height: 100dvh; /* adjust based on navbar height */
-  overflow: auto;
-  width: 100%;
+    height: 100dvh; /* adjust based on navbar height */
+    overflow: auto;
+    width: 100%;
   }
   .two-no-task .helper-text {
     color: #333333;
   }
   /* Main contents */
-
 
   .main-container .modals {
     position: fixed;
