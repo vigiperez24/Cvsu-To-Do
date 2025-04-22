@@ -333,8 +333,13 @@ li a {
 
 /* Mobile Screen responsive */
 @media (max-width: 768px) {
+  body {
+    display: block; /* Remove flex centering on mobile */
+    height: auto;
+    border-radius: 0;
+  }
   .main-container {
-  height: calc(100dvh - 60px); /* adjust based on navbar height */
+  height: 100dvh; /* adjust based on navbar height */
   overflow: auto;
   width: 100%;
   }

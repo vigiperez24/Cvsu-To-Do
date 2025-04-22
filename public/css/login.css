@@ -162,18 +162,14 @@ button:disabled {
 /* Mobile screen */
 
 @media (max-width: 768px) {
-  /* My main-container */
-  .main-container {
-    background-color: #e4e1e1;
-    width: 100%;
-    height: 100dvh;
-
+  body {
+    display: block; /* Remove flex centering on mobile */
+    height: auto;
+    border-radius: 0;
   }
-
-  footer {
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    right: 0;
+  .main-container {
+  height: 100dvh; /* adjust based on navbar height */
+  overflow: auto;
+  width: 100%;
   }
 }

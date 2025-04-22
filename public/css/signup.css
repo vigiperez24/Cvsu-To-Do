@@ -160,17 +160,16 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
-  /* My main-container */
-  .main-container {
-    background-color: #e4e1e1;
-    width: 100%;
-    height: 100dvh;
-    padding: 1rem;
-    border-radius: 8px;
-    padding: 40px 40px;
-    position: fixed;
+  body {
+    display: block; /* Remove flex centering on mobile */
+    height: auto;
+    border-radius: 0;
   }
-
+  .main-container {
+  height: 100dvh; /* adjust based on navbar height */
+  overflow: auto;
+  width: 100%;
+  }
   footer {
     position: fixed;
     bottom: 100px;
